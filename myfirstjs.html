@@ -4,5 +4,24 @@
             <title>DEMO</title>
     </head>
 <body>
+    <input type="number" id="num1" value="5">
+    <input type="number" id="num2" value="4">
+    <p id ="message">b</p>
+    <button onclick="add()">ADD</button>
+    <script>
+        function add() {
+            var num1 = document.getElementById("num1").value;
+            var num2 = document.getElementById("num2").value;
+            var sum = parseInt(num1) + parseInt(num2);
+            alert("the sum is " + sum)
+
+
+
+        }
+        alert("Hello Turnip");
+        document.write("<h1>Hello world</h1>");
+        change = document.getElementById("message");
+        change.innerHTML = "bibblebobble"
+    </script>
 </body>
 </html>
