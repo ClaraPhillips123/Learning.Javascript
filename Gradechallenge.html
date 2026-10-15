@@ -1,25 +1,66 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Task1</title>
-    </head>
-    <body>
-        <input type="number" id="analysis" value="0">
-        <input type="number" id="design" value="0">
-        <input type="number" id="implementation" value="0">
-        <input type="number" id="evaluation" value="0">
-        <button onclick="addNumbers()">Add Numbers</button>
-        <p id="result">Answer here!</p>
-        <script>
-            function addNumbers(){
-                var number1 = parseFloat(document.getElementById("analysis").value);
-                var number2 = parseFloat(document.getElementById("design").value);
-                var number3 = parseFloat(document.getElementById("implementation").value);
-                var number4 = parseFloat(document.getElementById("evaluation").value);
-                var sum = number1 + number2 + number3 +number4;
-                placetoput = document.getElementById("result");
-                placetoput.innerHTML = "They add up to: "+sum;
-            }
+        <title>grades</title>
+    </head>    
+     <body>
+     <script>
+        let analysis = Number(prompt("Enter analysis mark out of 25:"));
+let design = Number(prompt("Enter design mark out of 25:"));
+let implementation = Number(prompt("Enter implementation mark out of 25:"));
+let evaluation = Number(prompt("Enter evaluation mark out of 25:"));
+
+let total = analysis + design + implementation + evaluation;
+let grade;
+let nextMark;
+
+switch (true) {
+    case total >= 80:
+        grade = "A*";
+        nextMark = 0;
+        break;
+    case total >= 67:
+        grade = "A";
+        nextMark = 80 - total;
+        break;
+    case total >= 54:
+        grade = "B";
+        nextMark = 67 - total;
+        break;
+    case total >= 41:
+        grade = "C";
+        nextMark = 54 - total;
+        break;
+    case total >= 31:
+        grade = "D";
+        nextMark = 41 - total;
+        break;
+    case total >= 22:
+        grade = "E";
+        nextMark = 31 - total;
+        break;
+    case total >= 13:
+        grade = "F";
+        nextMark = 22 - total;
+        break;
+    case total >= 4:
+        grade = "G";
+        nextMark = 13 - total;
+        break;
+    default:
+        grade = "U";
+        nextMark = 4 - total;
+}
+
+alert("Total mark: " + total +
+      "\nGrade: " + grade +
+      (total < 80
+        ? "\nMarks needed for next grade: " + nextMark
+        : "\nYou achieved the highest grade!"));
+
+        
         </script>
-    </body>
-</html> 
+        </body>
+        </html>
+        
+
